@@ -6,12 +6,14 @@ import ProductList from './components/ProductList/ProductList';
 import Users from './components/Users/Users';
 import NavBar from './components/NavBar/NavBar';
 import './App.scss';
+import CartProvider from './context/CartContext';
 
 
 function App() {
   return (
    
     <Router>
+      <CartProvider>
         <div className='App'>
           <NavBar />
           <Routes>
@@ -21,7 +23,7 @@ function App() {
             <Route path='users' element={<Users/>} />
           </Routes>
         </div>
-     
+      </CartProvider>
     </Router>
    
     
