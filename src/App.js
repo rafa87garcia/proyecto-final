@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Cart from './components/Cart/Cart';
-import ProductDetail from './components/ProductDetail/ProductDetail';
-import ProductList from './components/ProductList/ProductList';
+import Cart from './pages/Cart/Cart';
+import ProductDetail from './pages/product/component/ProductDetail/ProductDetail';
+import ProductList from './pages/product/component/ProductList/ProductList';
 import Users from './components/Users/Users';
 
 
