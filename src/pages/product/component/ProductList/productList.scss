@@ -1,0 +1,19 @@
+.product-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 24px;
+    justify-content: center;
+    font-size: 15px;
+    padding: 0 80px;
+    margin: 40px 0 14px 0;
+
+    &__image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        
+    }
+   
+    
+}

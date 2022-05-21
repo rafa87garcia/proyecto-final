@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./productList.scss"
 
 function ProductList() {
 
@@ -20,13 +21,13 @@ function ProductList() {
     },[])
    
     return (
-        <div>
+        <div class="product-list">
         {products.map((product) => {
           return (
             <div key={product.id}>
-              <h3>{product.title}</h3>
+              <h3 class="product-list__title">{product.title}</h3>
               <p>{product.price}</p>
-              <img src={product.image} alt=""/>
+              <img class="product-list__image"src={product.image} alt=""/>
             </div>
           );
         })}
