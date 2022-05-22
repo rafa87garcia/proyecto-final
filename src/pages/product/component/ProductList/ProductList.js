@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import "./productList.scss"
 
 function ProductList() {
@@ -25,7 +26,9 @@ function ProductList() {
         {products.map((product) => {
           return (
             <div key={product.id}>
+            
               <h3 class="product-list__title">{product.title}</h3>
+              
               <p>{product.price}</p>
               <img class="product-list__image"src={product.image} alt=""/>
             </div>
