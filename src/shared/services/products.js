@@ -1,17 +1,18 @@
-// import axios from "axios";
+import axios from "axios";
+import config from "../../data/config";
 
-// const endpoint = "products";
-// const baseURL = `https://${apiKey}.mockapi.io/api/${version}`;
-// const api = axios.create({
-//   baseURL,
-// });
+const endpoint = "products";
+const baseURL = `https://${config.baseUrl}:${config.port}`;
+const api = axios.create({
+  baseURL,
+});
 
-// const get = () => api.get(`/${endpoint}`);
+const get = () => api.get(`/${endpoint}`);
 
-// const add = (data) => api.post(`/${endpoint}`, data);
+const add = (data) => api.post(`/${endpoint}`, data);
 
-// const edit = (id) => api.put(id);
+const edit = (id) => api.put(id);
 
-// const remove = (id) => api.delete(id);
+const remove = (id) => api.delete(id);
 
-// export { get, add, edit, remove };
+export { get, add, edit, remove };
