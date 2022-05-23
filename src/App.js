@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import Login from './pages/auth/Login/Login';
-import Register from './pages/auth/Register/Register';
+import Login from './pages/Auth/Login/Login';
+import Register from './pages/Auth/Register/Register';
 import Cart from './pages/Cart/Cart';
 import Header from './shared/components/Header/Header';
 import ProductDetail from './pages/product/component/ProductDetail/ProductDetail';
@@ -11,7 +11,7 @@ import Users from './pages/Users/Users';
 import Layout from './shared/components/Layout/Layout';
 import Admin from './pages/Admin/Admin';
 import Contact from  './pages/Contact/Contact';
-
+import Orders from './shared/Orders/Orders';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
             <Route path='/' element={<ProductList />} />
             <Route path='productdetail/:id' element={<ProductDetail />} />
             <Route path='users' element={<Users/>} />
+            <Route path='orders' element={<Orders/>} />
           </Routes>
           <Footer />
         </Layout>

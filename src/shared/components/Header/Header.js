@@ -9,7 +9,7 @@ const Header = () => {
       
     <div>
     <NavUser />
-    <h1>My Store</h1>
+    <h1>Medias Puri</h1>
     
     <NavBar />
     
