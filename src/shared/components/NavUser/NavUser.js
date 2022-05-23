@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./_navUser.scss";
 
 const NavUser = () => {
@@ -7,9 +7,9 @@ const NavUser = () => {
         <div className="navUser">
       <nav>
       <ul>
-        <li><NavLink to="login">Log in</NavLink></li>
-        <li><NavLink to="register">Register</NavLink></li>
-        <li><NavLink to="cart">Cart</NavLink></li>
+        <li><Link to="login">Log in</Link></li>
+        <li><Link to="register">Register</Link></li>
+        <li><Link to="cart">Cart</Link></li>
     </ul>
     </nav>
     </div>
