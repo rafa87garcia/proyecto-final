@@ -1,22 +1,16 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
   return (
     <div>
-      <h1>My Store</h1>
-      <nav><ul>
-        <li>USER</li>
-        <li>CART</li>
-      </ul>
-      </nav>
-      <div>
-        <ul>
-          <li>ALL PRODUCTS</li>
-          <li>CATEGORIES</li>
-        </ul>
-      </div>
+    <ul>
+        <li><Link to="/">All Products</Link></li>
+        <li><Link to="contact">Contact</Link></li>
+        <li><Link to="admin">Admin</Link></li>
+    </ul>
     </div>
   )
 }
 
-export default NavBar;
+export default NavBar
