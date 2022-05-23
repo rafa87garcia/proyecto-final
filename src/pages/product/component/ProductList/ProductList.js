@@ -22,15 +22,15 @@ function ProductList() {
     },[])
    
     return (
-        <div class="product-list">
+        <div >
         {products.map((product) => {
           return (
-            <div key={product.id}>
+            <div className="product-grid" key={product.id}>
             
-              <h3 class="product-list__title">{product.title}</h3>
+              <h3 class="product-grid__title">{product.title}</h3>
               
-              <p>{product.price}</p>
-              <img class="product-list__image"src={product.image} alt=""/>
+              <p class="product-grid__price">{product.price}</p>
+              <img class="product-grid__image"src={product.image} alt=""/>
             </div>
           );
         })}

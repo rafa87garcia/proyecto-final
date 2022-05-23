@@ -5,7 +5,8 @@ const NavUser = () => {
   return (
     <div>
         <div className="navUser">
-      <nav>
+        <h1 className="navUser__logo">Medias Puri</h1>
+      <nav className="navUser__content">
       <ul>
         <li><Link to="login">Log in</Link></li>
         <li><Link to="register">Register</Link></li>
