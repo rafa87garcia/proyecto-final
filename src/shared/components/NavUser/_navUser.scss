@@ -1,39 +1,37 @@
 .navUser{
     height: 80px;
     display: flex;
-    // justify-content: flex-end;
     background: pink;
     width: 100%;
     padding: 0 1.5rem;
     transition: 0.3d ease all;
     align-items: center;
     font-family: Georgia, serif;
-    justify-content: space-between;
-    align-content: center;
+    // justify-content: space-between;
+    // align-content: center;
 
 
     &__logo{
         font-size: 3rem;
         font-weight: bold;
         text-decoration: none;
-        align-items: center;
+        // align-items: center;
     }
     
-    &__content{
-        
-        margin: 0 auto;
-        height: 100%;
-        align-items: flex-start;
-        justify-content: end;
-        flex-direction: column;
-        transform: translate(0);
-        transition: 0.3s ease transform;
-        position: static;
+     &__content{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
         list-style: none;
-            padding: 0;
-            display: flex;
-
         
-}
+        li{
+            margin-right: 3rem;
+        }
+      
+
+
+         
+        
+    }
 
 }
