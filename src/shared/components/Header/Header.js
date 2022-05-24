@@ -9,8 +9,6 @@ const Header = () => {
       
     <div>
     <NavUser />
-    <h1>Medias Puri</h1>
-    
     <NavBar />
     
     </div>
