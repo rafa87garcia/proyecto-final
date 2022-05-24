@@ -8,7 +8,8 @@
     transition: 0.3d ease all;
     align-items: center;
     font-family: Georgia, serif;
-    
+    justify-content: space-between;
+    align-content: center;
 
 
     &__logo{
@@ -25,20 +26,14 @@
         align-items: flex-start;
         justify-content: end;
         flex-direction: column;
-        
         transform: translate(0);
         transition: 0.3s ease transform;
         position: static;
-        
-
-        ul{
-            list-style: none;
+        list-style: none;
             padding: 0;
             display: flex;
-            
-            
+
         
-    };
 }
 
 }
