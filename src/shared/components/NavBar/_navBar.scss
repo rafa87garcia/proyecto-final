@@ -1,0 +1,13 @@
+.navBar{
+    display: flex;
+    height: 30px;
+    background-color: goldenrod;
+    justify-content: center;
+    align-items: center;//de ariba abajo
+
+    ul{
+        list-style: none;
+        display: flex;
+        
+    }
+}

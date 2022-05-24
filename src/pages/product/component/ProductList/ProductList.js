@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import "./productList.scss"
+
 function ProductList() {
 
     const BASEURL = "https://fakestoreapi.com/products";
@@ -20,13 +22,15 @@ function ProductList() {
     },[])
    
     return (
-        <div>
+        <div >
         {products.map((product) => {
           return (
-            <div key={product.id}>
-              <h3>{product.title}</h3>
-              <p>{product.price}</p>
-              <img src={product.image} alt=""/>
+            <div className="product-grid" key={product.id}>
+            
+              <h3 class="product-grid__title">{product.title}</h3>
+              
+              <p class="product-grid__price">{product.price}</p>
+              <img class="product-grid__image"src={product.image} alt=""/>
             </div>
           );
         })}
