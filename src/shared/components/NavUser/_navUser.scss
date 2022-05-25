@@ -2,13 +2,12 @@
     height: 80px;
     display: flex;
     background: pink;
-    width: 100%;
     padding: 0 1.5rem;
     transition: 0.3d ease all;
     align-items: center;
     font-family: Georgia, serif;
-    // justify-content: space-between;
-    // align-content: center;
+    justify-content: space-between;
+    
 
 
     &__logo{
@@ -26,6 +25,7 @@
         
         li{
             margin-right: 3rem;
+            text-decoration: none;
         }
       
 
