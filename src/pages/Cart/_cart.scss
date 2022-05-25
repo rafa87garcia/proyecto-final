@@ -1,0 +1,11 @@
+.cart{
+    display: list-item;
+    text-align: center;
+
+    &cartlist{
+        text-decoration: none;
+        li{
+            text-decoration: none;
+    }
+}
+}
