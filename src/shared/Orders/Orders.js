@@ -4,8 +4,8 @@ const Orders = () => {
   return (
     <div>
     
-    <h1>My Orders</h1>
-    <ul>
+    <h1 className='title'>My Orders</h1>
+    <ul className='orderList'>
       <li>Order 1</li>
       <li>Order 2</li>
       <li>Order 3</li>
