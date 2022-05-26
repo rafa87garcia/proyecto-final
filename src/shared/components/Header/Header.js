@@ -5,14 +5,12 @@ import NavUser from "../NavUser/NavUser";
 
 const Header = () => {
   return (
-    <div>
-      
-    <div>
-    <NavUser />
-    <NavBar />
+    <header>
+      <NavUser />
+      <NavBar />
+    </header>
     
-    </div>
-    </div>
+   
   )
 }
 

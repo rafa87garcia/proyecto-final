@@ -20,39 +20,44 @@ const data_send = async (data) => {
 const Contact = () => {
 
   return (
-    <Formik
-      onSubmit={data_send}
-      validationSchema={schema}
-      initialValues={{
-        email: "",
-        subject: "",
-        message: "",
-      }}
-    >
-      {({ handleSubmit, handleChange, handleReset, errors }) => (
-        <Form noValidate onSubmit={handleSubmit} onReset={handleReset}>
-          <label htmlFor="email">Correo electrónico:</label>
-          <input id="email" name="email" type="email" onChange={handleChange} />
-          <ErrorMessage
-            name='email'
-            component="div"
-          />
-          <label htmlFor="email">Asunto:</label>
-          <input id="subject" name="subject" type="text" onChange={handleChange} />
-          <ErrorMessage
-            name='subject'
-            component="div"
-          />
-          <label htmlFor="message">Correo electrónico:</label>
-          <textarea id="message" name="message" type="textarea" row="10" onChange={handleChange}></textarea>
-          <ErrorMessage
-            name='message'
-            component="div"
-          />
-          <button type="submit">Enviar</button>
-        </Form>
-      )}
-    </Formik>
+
+    <div style={{height:'100vh'}}>
+      <Formik
+        onSubmit={save}
+        validationSchema={schema}
+        initialValues={{
+          email: "",
+          subject: "",
+          message: "",
+        }}
+      >
+        {({handleSubmit, handleChange, errors}) => (
+          <Form noValidate onSubmit={handleSubmit}>
+            <label htmlFor="email">Correo electrónico:</label>
+            <input id="email" name="email" type="email" onChange={handleChange} />
+            <ErrorMessage
+              name='email'
+              component="div"
+            />
+            <label htmlFor="email">Asunto:</label>
+            <input id="subject" name="subject" type="text" onChange={handleChange} />
+            <ErrorMessage
+              name='subject'
+              component="div"
+            />
+            <label htmlFor="message">Correo electrónico:</label>
+            <textarea id="message" name="message" type="textarea" row="10" onChange={handleChange}></textarea>
+            <ErrorMessage
+              name='message'
+              component="div"
+            />
+            <button name="submit">Enviar</button>
+          </Form>
+        )}
+      </Formik>
+
+    </div>
+
   )
 }
 

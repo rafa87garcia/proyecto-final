@@ -10,7 +10,9 @@ const NavUser = () => {
         
   
       <ul className="navUser__content">
-        <li><Link to="login">Log in</Link></li>
+        <li><Link to="login" >Log in</Link></li>
+        
+
         <li><Link to="register">Register</Link></li>
         <li><Link to="cart">Cart</Link></li>
       </ul>
