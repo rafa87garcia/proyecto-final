@@ -3,13 +3,18 @@ import Context from '../context/StaticContext';
 import { productAPI } from '../shared/services';
 
 function useProducts() {
+  
   const [products, setProducts] = useState([]);
+  const [productsError, setProductsError] = useState(null);
   const { productContext, setProductContext } = useContext(Context);
   useEffect(() => {
     const getData = async () => {
-      const { data } = await productAPI.get();
-
-      setProductContext(data);
+      try {
+        const { data } = await productAPI.get();
+        setProductContext(data);
+      } catch (error) {
+        setProductsError(error);
+      }
     };
     if (!productContext.length) {
       getData();
@@ -20,7 +25,8 @@ function useProducts() {
   }, [productContext, setProductContext]);
 
   return {
-    products
+    products,
+    productsError
   }
 }
 

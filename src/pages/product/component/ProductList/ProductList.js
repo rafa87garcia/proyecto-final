@@ -7,8 +7,12 @@ import "./productList.scss"
 
 const ProductList = () => {
 
+  const { products, productsError } = useProducts();
 
-  const { products } = useProducts();
+  if (productsError) {
+    // return (<ErrorManager ></ErrorManager>);
+    return (<div>No tienes permisos {JSON.stringify(productsError)}</div>);
+  }
 
   if (!products.length) {
     return (<div>No se han encontrado productos</div>);

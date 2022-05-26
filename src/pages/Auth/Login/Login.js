@@ -1,16 +1,20 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { Row, Form, Col, Button, Container } from 'react-bootstrap';
 import * as yup from "yup";
 
 import './_login.scss'
-import {Row, Form, Col, Button, Container} from 'react-bootstrap';
+import useUser from '../../../hooks/useUser';
 
-const save = (data) => {
-  console.log(data);
-}
+
 
 const Login = () => {
+  const { userLogin,userCurrent } = useUser();
+  const save = async (data) => {
+    userLogin(data);
+    
+  };
 
   const schema = yup.object().shape({
     email: yup.string()
@@ -22,12 +26,13 @@ const Login = () => {
       .required('Requerido'),
   });
 
-  return (
+
+  return userCurrent ? (<Navigate to="/" />) :(
     <>
-    <Container style={{height: '100vh'}}>
-    
-      <Row className='justify-content-md-center'>
-        <Col md={6}>
+      <Container style={{ height: '100vh' }}>
+
+        <Row className='justify-content-md-center'>
+          <Col md={6}>
 
             <Formik
               initialValues={{
@@ -38,68 +43,68 @@ const Login = () => {
             >
               {({ handleSubmit, handleChange, errors }) => (
                 <Form noValidate onSubmit={handleSubmit} className='login'>
-                <Row className='justify-content-md-center'>
-                  <h1>Login</h1>
+                  <Row className='justify-content-md-center'>
+                    <h1>Login</h1>
 
-                </Row>
-                <Row className="mb-3">
-                
+                  </Row>
+                  <Row className="mb-3">
+
 
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Col>
-                      <Form.Label>Email</Form.Label>
+                        <Form.Label>Email</Form.Label>
 
-                      </Col>     
-                      <Col > 
-                      <Form.Control name="email"
-                          type='email' 
+                      </Col>
+                      <Col >
+                        <Form.Control name="email"
+                          type='email'
                           onChange={handleChange}
 
-                      />
-                      </Col>       
-                      
+                        />
+                      </Col>
 
-                        {/* <Field
+
+                      {/* <Field
                           name="email"
                           id="email"
                           type="email"
                           onChange={handleChange}
                         /> */}
-                        <ErrorMessage name="email" component="div" />
+                      <ErrorMessage name="email" component="div" />
 
                     </Form.Group>
-                      
+
                   </Row>
 
                   <Row className="mb-3">
-                  
+
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Col >
                         <Form.Label>Password</Form.Label>
-                      </Col>    
+                      </Col>
                       <Col >
 
                         <Form.Control name="password"
-                            type='password' 
-                            onChange={handleChange}
+                          type='password'
+                          onChange={handleChange}
 
                         />
 
-                        <ErrorMessage name="password" component="div" />  
+                        <ErrorMessage name="password" component="div" />
 
-                      </Col>      
+                      </Col>
 
                     </Form.Group>
-                      
+
                   </Row>
-                    {/* <Field 
+                  {/* <Field 
                       name="password"
                       id="password"
                       type="password"
                       onChange={handleChange}
                     />Password
                     <ErrorMessage name="password" component="div" /> */}
-                  
+
                   <Row className='form__button '>
                     <Col className='form__button--padding'>
                       <Button type='submit' variant='outline-primary'>Login</Button>
