@@ -1,5 +1,9 @@
 import React from 'react'
+<<<<<<< HEAD
 import { ErrorMessage, Form, Formik } from 'formik'
+=======
+import { ErrorMessage, Field, Form, Formik } from 'formik'
+>>>>>>> eb491db27467bc960b4dafefcb859d036c4f6ddf
 import * as yup from 'yup';
 const schema = yup.object().shape({
   email: yup.string().required().email(),
