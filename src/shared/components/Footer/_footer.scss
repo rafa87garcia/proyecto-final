@@ -1,11 +1,19 @@
 .footer{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
-    height: 200px;
+    // height: 200px;
+    flex-flow: row wrap;
     align-items: center;
     background-color: gray;
-    justify-content: center;
+    justify-content: space-between;
+    color: white;
+
+
+    &__copyright {
+        padding: 1rem;
+        
+    }
 
     &_link{
         list-style: none;
@@ -15,6 +23,12 @@
         
         li{
             margin-right: 3rem;
+
+             a {
+                color: white;
+
+                text-decoration: none;
+            }
             
 
             }
@@ -23,6 +37,14 @@
 
     }
 
+    &__icons {
+        padding: 1rem;
+    }
 
 
+
+}
+
+.icon-facebook {
+    margin-right:15px;
 }
