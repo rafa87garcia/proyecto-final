@@ -7,11 +7,7 @@ const api = axios.create({
   baseURL,
 });
 
-const emailContact = (data) => api.post(`/${endpoint}/contact`, (data) => {
-debugger;
-  console.log("entra");
-  return data;
-});
+const send = (data) => api.post(`/${endpoint}/contact`, data);
 
 
-export { emailContact };
+export { send };

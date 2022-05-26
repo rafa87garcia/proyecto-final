@@ -1,5 +1,7 @@
 import React from 'react'
 import { ErrorMessage, Form, Formik } from 'formik'
+import { emailAPI } from '../../shared/services';
+
 
 import * as yup from 'yup';
 const schema = yup.object().shape({
@@ -8,13 +10,17 @@ const schema = yup.object().shape({
   message: yup.string().required(),
 });
 
-const save = (data) => {
-  debugger;
-  console.log(data);
-}
+const { send } = emailAPI;
 
+
+const data_send = async (data) => {
+  await send(data);
+  
+}
 const Contact = () => {
+
   return (
+
     <div style={{height:'100vh'}}>
       <Formik
         onSubmit={save}
@@ -51,6 +57,7 @@ const Contact = () => {
       </Formik>
 
     </div>
+
   )
 }
 
