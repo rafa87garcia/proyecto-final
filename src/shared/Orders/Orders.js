@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './_orders.scss';
 const Orders = () => {
   return (
     <div className='Order'>
