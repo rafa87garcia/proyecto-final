@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import Product from '../../../../shared/components/Product/Product';
 
 import "./productList.scss"
 
@@ -22,19 +24,16 @@ function ProductList() {
     },[])
    
     return (
-        <div >
-        {products.map((product) => {
-          return (
-            <div className="product-grid" key={product.id}>
-            
-              <h3 class="product-grid__title">{product.title}</h3>
-              
-              <p class="product-grid__price">{product.price}</p>
-              <img class="product-grid__image"src={product.image} alt=""/>
-            </div>
-          );
-        })}
-      </div>
+      <Container fluid='md' className='mt-5'>
+        <Row style={{rowGap: "2rem"}}>
+        {products.map((data) => (
+              <Col key={data.id}>
+                <Product {...data} />
+              </Col>
+            ))}
+          
+        </Row>
+    </Container>
     
   )
 }
