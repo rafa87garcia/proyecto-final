@@ -2,7 +2,7 @@ import React from 'react'
 
 const Orders = () => {
   return (
-    <div>
+    <div >
     
     <h1 className='title'>My Orders</h1>
     <ul className='orderList'>
