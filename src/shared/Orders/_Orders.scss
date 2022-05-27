@@ -4,9 +4,6 @@
     flex-wrap: nowrap;
     flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-
-
     .title{
         font-size: 1.5rem;       
     }
@@ -17,6 +14,15 @@
         flex-direction: column;
         grid-gap: 1rem;
         list-style-type: none;
+    
+    .orderDetail{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            list-style-type: none;
+        }
     }
+
 }
 // &:hover { cursor: pointer; }

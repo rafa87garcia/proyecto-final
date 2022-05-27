@@ -6,10 +6,42 @@ const Orders = () => {
     
     <h1 className='title'>My Orders</h1>
     <ul className='list'>
-      <li>Order 1</li>
-      <li>Order 2</li>
-      <li>Order 3</li>
-      <li>Order 4</li>
+      <li>Order 1
+        <ul className='orderDetail'>
+          <li>name:</li>
+          <li>description:</li>
+          <li>image:</li>
+          <li>pvp: </li>
+          <li>category: </li>
+      </ul>
+      </li>
+      <li>Order 2
+      <ul className='orderDetail'>
+          <li>name:</li>
+          <li>description:</li>
+          <li>image:</li>
+          <li>pvp: </li>
+          <li>category: </li>
+        </ul>
+      </li>
+      <li>Order 3
+      <ul className='orderDetail'>
+          <li>name:</li>
+          <li>description:</li>
+          <li>image:</li>
+          <li>pvp: </li>
+          <li>category: </li>
+        </ul>
+      </li>
+      <li>Order 4
+      <ul className='orderDetail'>
+          <li>name:</li>
+          <li>description:</li>
+          <li>image:</li>
+          <li>pvp: </li>
+          <li>category: </li>
+        </ul>
+      </li>
     </ul>
     </div>
   )
