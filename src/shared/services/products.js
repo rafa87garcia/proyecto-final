@@ -4,7 +4,6 @@ import config from "../../data/config";
 const endpoint = "products";
 const baseURL = `${config.baseUrl}:${config.port}`;
 const token = localStorage.getItem("token");
-
 const api = axios.create({
   baseURL,
   headers: { 'Authorization': 'Bearer ' + token }

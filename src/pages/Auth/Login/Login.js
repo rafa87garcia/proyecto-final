@@ -1,19 +1,16 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Row, Form, Col, Button, Container } from 'react-bootstrap';
 import * as yup from "yup";
 
 import './_login.scss'
 import useUser from '../../../hooks/useUser';
 
-
-
 const Login = () => {
-  const { userLogin,userCurrent } = useUser();
+  const { userLogin, userCurrent } = useUser();
   const save = async (data) => {
     userLogin(data);
-    
   };
 
   const schema = yup.object().shape({
@@ -26,8 +23,9 @@ const Login = () => {
       .required('Requerido'),
   });
 
+  const navigate = useNavigate();
 
-  return userCurrent ? (<Navigate to="/" />) :(
+  return userCurrent ? (navigate('/', { replace: true })) : (
     <>
       <Container style={{ height: '100vh' }}>
 

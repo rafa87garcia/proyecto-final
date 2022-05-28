@@ -21,14 +21,14 @@ const useUser = () => {
     if (!data) {
       return;
     }
-    try{
-    const { data: { user, token } } = await login(data);
+    try {
+      const { data: { user, token } } = await login(data);
 
-    localStorage.setItem("token", token);
-    setTokenContext(JSON.parse(token));
-    setUserContext(user);
+      const tokenStogare = localStorage.setItem("token", token);
+      setTokenContext(tokenStogare);
+      setUserContext(user);
 
-    } catch(error){}
+    } catch (error) { }
   }
 
   return {
@@ -38,4 +38,4 @@ const useUser = () => {
   }
 }
 
- export default useUser;
+export default useUser;
