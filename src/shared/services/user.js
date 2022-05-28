@@ -6,7 +6,6 @@ const baseURL = `https://${config.baseUrl}:${config.port}`;
 const api = axios.create({
   baseURL,
 });
-
 const login = (data) => api.post('/login', data);
 
 const get = () => api.get(`/${endpoint}`);

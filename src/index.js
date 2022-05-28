@@ -4,11 +4,15 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { StaticContext } from './context/StaticContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-   <BrowserRouter>
-    <App />
+    <BrowserRouter>
+      <StaticContext>
+        <App />
+      </StaticContext>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

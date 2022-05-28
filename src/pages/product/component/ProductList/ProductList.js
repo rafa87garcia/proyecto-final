@@ -1,39 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useProducts from '../../../../hooks/useProducts';
 
 import "./productList.scss"
 
-function ProductList() {
+const ProductList = () => {
 
-  const BASEURL = "https://fakestoreapi.com/products";
 
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch(BASEURL)
-      .then((response) => response.json())
-      .then(
-        (response) => {
-          console.log(response);
-          setProducts(response);
-        }
-      )
+  const { products } = useProducts();
+  console.log(products);
 
-  }, [])
+  if (!products.length) {
+    return (<div>No se han encontrado productos</div>);
+  }
 
   return (
-    <div >
-      {products.map((product) => {
-        return (
-          <div className="product-grid" key={product.id}>
-            <h3 className="product-grid__title">{product.title}</h3>
-            <p className="product-grid__price">{product.price}</p>
-            <img className="product-grid__image" src={product.image} alt="" />
+    <div>
+      {
+        products.map((product) => (
+          <div key={product._id}>
+            {product.name}
           </div>
-        );
-      })}
+        ))
+      }
     </div>
-
   )
 }
 
