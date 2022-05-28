@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "../../data/config";
 
 const endpoint = "products";
-const baseURL = `https://${config.baseUrl}:${config.port}`;
+const baseURL = `${config.baseUrl}:${config.port}`;
 const api = axios.create({
   baseURL,
 });

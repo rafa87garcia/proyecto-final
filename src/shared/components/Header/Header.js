@@ -9,8 +9,6 @@ const Header = () => {
       <NavUser />
       <NavBar />
     </header>
-    
-   
   )
 }
 
