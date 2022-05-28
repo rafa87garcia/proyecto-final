@@ -12,18 +12,13 @@ const schema = yup.object().shape({
 
 const { send } = emailAPI;
 
-
-const data_send = async (data) => {
-  await send(data);
-  
-}
 const Contact = () => {
 
   return (
 
     <div style={{height:'100vh'}}>
       <Formik
-        onSubmit={save}
+        onSubmit={send}
         validationSchema={schema}
         initialValues={{
           email: "",
