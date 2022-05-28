@@ -2,9 +2,9 @@
 import React from 'react'
 import './_Orders.scss';
 
-// if (document.getElementById('Orders')) {
-//   ReactDOM.render(<Orders />, document.getElementById('Orders'));
-// }
+if (document.getElementById('Orders')) {
+ 
+}
 const Orders = () => {
   
   return (
