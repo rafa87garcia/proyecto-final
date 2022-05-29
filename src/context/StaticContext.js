@@ -7,6 +7,8 @@ export const StaticContext = ({ children }) => {
   const [productContext, setProductContext] = useState([]);
   const [cartContext, setCartContext] = useState([]);
 
+  const [userContext, setUserContext] = useState();
+  const [tokenContext, setTokenContext] = useState();
   return (
     <Context.Provider
       value={{
@@ -14,6 +16,10 @@ export const StaticContext = ({ children }) => {
         setProductContext,
         cartContext, 
         setCartContext,
+        userContext,
+        setUserContext,
+        tokenContext,
+        setTokenContext
       }}
     >
       {children}

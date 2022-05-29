@@ -9,19 +9,8 @@ const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id);
 
-
-  if (!product) return ""
-
-
-
- 
-
+  if (!product) return "";
   const { description, image, price, name } = product;
-
-  console.log(image);
-
-  
-
 
   const handlerAdd = () => {
 
@@ -30,7 +19,6 @@ const ProductDetail = () => {
   const handlerChange = () => {
 
   }
-
 
   return (
     <Container className="mt-5" style={{'min-height': '100vh'}}>
@@ -63,8 +51,8 @@ const ProductDetail = () => {
         </Col>
       </Row>
     </Container>
-    
-       
+
+
   )
 }
 
