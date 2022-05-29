@@ -1,11 +1,15 @@
-import { Stack } from "react-bootstrap";
+import { Badge, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './_navUser.scss'; 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import useShoppingCart from "../../../hooks/useShoppingCart";
 
 
 
 const NavUser = () => {
+
+  const { cart } = useShoppingCart();
+
   return (
     <div  className="navUser">
         
@@ -18,12 +22,18 @@ const NavUser = () => {
 
         <li><Link to="register">Register</Link></li>
         <li>
-          
+        
+        { cart.length != 0 && (
+          <Badge pill bg="danger" text="light">
+            {cart.length}
+          </Badge>
+        )}
           <Link to="cart">
-            <AiOutlineShoppingCart />
+            <AiOutlineShoppingCart style={{
+            fontSize: "28px",
+          }} />
           </Link>
-          
-        Cart</li>
+        </li>
       </ul>
      </div>
   )
