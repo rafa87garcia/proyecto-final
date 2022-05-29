@@ -26,6 +26,7 @@ const Contact = () => {
           message: '',
         }}
       >
+
         {({ handleSubmit, handleChange, errors }) => (
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -71,6 +72,7 @@ const Contact = () => {
             <Button variant="primary" type="submit">
               Send
             </Button>
+
           </Form>
         )}
       </Formik>
