@@ -19,9 +19,7 @@ const NavUser = () => {
         <li>
           <Link to="cart">
             <AiOutlineShoppingCart />
-          </Link>
-
-          Cart</li>
+          </Link></li>
       </ul>
     </div>
   )

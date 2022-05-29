@@ -3,19 +3,21 @@
     height: 30px;
     background-color: grey;
     justify-content: center;
-    align-items: center;//de ariba abajo
+   
     
     ul{
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         
         li{
             margin-right: 3rem;
             font-size: larger;
+            align-items: center;
+            
             a{
                 color: white;
-
+                
                 text-decoration: none;
             }
         }        
