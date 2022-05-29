@@ -20,7 +20,7 @@ const Product = ({ _id, name, image, price }) => {
     <Card>
       <Link to={`productdetail/${_id}`}>
         <Card.Img variant="top" src={image} className='card--image' />
-        <Card.Body>
+        <Card.Body style={{height: '88px'}}>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
 

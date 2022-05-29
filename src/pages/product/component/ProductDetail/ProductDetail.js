@@ -1,23 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card, Col, Container, Form, Row, Stack } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import useProducts from '../../../../hooks/useProducts';
+import useShoppingCart from '../../../../hooks/useShoppingCart';
 
 const ProductDetail = () => {
 
   const { getProductById } = useProducts();
-  const { id } = useParams();
-  const product = getProductById(id);
+  const { _id } = useParams();
+  const product = getProductById(_id);
+  const { addItem } = useShoppingCart();
+  const [quantity, setQuantity] = useState(1);
 
   if (!product) return "";
   const { description, image, price, name } = product;
 
-  const handlerAdd = () => {
-
+  const handleAdd = () => {
+    addItem({_id, quantity});
   }
 
-  const handlerChange = () => {
-
+  const handleChange = ({target}) => {
+    const { selectedIndex } = target;
+    const { value } = target[selectedIndex];
+    setQuantity(value);
   }
 
   return (
@@ -37,14 +42,14 @@ const ProductDetail = () => {
           <Stack >
             
             <div>Quantity:</div>
-            <Form.Select size="sm" onChange={handlerChange}>
+            <Form.Select size="sm" onChange={handleChange}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </Form.Select>
-            {/* <div className="vr" /> */}
-            <Button onClick={handlerAdd} variant='outline-primary' style={{'margin-top': '20px'}}>
+            
+            <Button onClick={handleAdd} variant='outline-primary' style={{'margin-top': '20px'}}>
               Add
             </Button>
           </Stack>

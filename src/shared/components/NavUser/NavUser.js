@@ -1,5 +1,5 @@
-import { Badge, Stack } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Badge } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import useShoppingCart from "../../../hooks/useShoppingCart";
 import './_navUser.scss';
@@ -13,7 +13,9 @@ const NavUser = () => {
 
   return (
     <div className="navUser">
+    <NavLink to='/'>
       <h1 className="navUser__logo">Puri Sport</h1>
+    </NavLink>
       <ul className="navUser__content">
 
         <li><Link to="login" >Log in</Link></li>

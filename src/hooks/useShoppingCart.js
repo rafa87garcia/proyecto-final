@@ -10,15 +10,22 @@ const useShoppingCart = () => {
     useEffect( () => setCart(cartContext), [cartContext]); 
 
     const addItem = (cartItem) => {
-      console.log(cartItem);
-        const data = cart.filter(({_id}) => _id !== cartItem._id);
-        setCartContext([...data, cartItem]);
+     
+      const data = cart.filter(({_id}) => _id !== cartItem._id);
+      setCartContext([...data, cartItem]);
 
+    }
+
+    const removeItem = (itemID) => {
+      const newCart = cart.filter(({_id}) => _id !==itemID)
+      // setCartContext([...newCart])
+      setCartContext(newCart);
     }
 
   return (
    { cart,
-    addItem
+    addItem,
+    removeItem
   }
   )
 }
