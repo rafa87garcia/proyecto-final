@@ -7,11 +7,13 @@ function useProducts() {
   const { productContext, setProductContext } = useContext(Context);
   useEffect(() => {
     const getData = async () => {
+      
       const { data } = await productAPI.get();
 
       setProductContext(data);
     };
     if (!productContext.length) {
+
       getData();
     }
     else {
@@ -19,8 +21,24 @@ function useProducts() {
     }
   }, [productContext, setProductContext]);
 
+  // const getProductById = (id) => {
+
+  //   debugger
+  //   console.log(id);
+  //  const productReturn= products.find((product) => product._id === id);
+
+  //  console.log(productReturn);
+
+  //  return productReturn;
+  
+  // };
+
+  const getProductById = (id) => products.find(({_id}) => _id === id);
+    
+
   return {
-    products
+    products,
+    getProductById
   }
 }
 
