@@ -4,15 +4,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Product from '../../../../shared/components/Product/Product';
 
 import "./productList.scss"
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
 
-  const { products, productsError } = useProducts();
+  const { products } = useProducts();
 
-  if (productsError) {
-    // return (<ErrorManager ></ErrorManager>);
-    return (<div>No tienes permisos {JSON.stringify(productsError)}</div>);
-  }
 
   if (!products.length) {
     return (<div>No se han encontrado productos</div>);
@@ -20,6 +17,11 @@ const ProductList = () => {
 
   return (
     <Container fluid='md' className='mt-5'>
+      <Row>
+        <Col>
+          <Link to="/productcreate">Create product</Link>
+        </Col>
+      </Row>
       <Row style={{ rowGap: "2rem" }}>
         {products.map((data) => (
           <Col key={data._id}>

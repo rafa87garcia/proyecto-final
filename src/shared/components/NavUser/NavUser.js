@@ -1,31 +1,29 @@
 import { Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './_navUser.scss'; 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import './_navUser.scss';
 
-
+import useUser from "../../../hooks/useUser";
 
 const NavUser = () => {
-  return (
-    <div  className="navUser">
-        
-        <h1 className="navUser__logo">Puri Sport</h1>
-        
-  
-      <ul className="navUser__content">
-        <li><Link to="login" >Log in</Link></li>
-        
 
+  const { userCurrent } = useUser();
+
+  return (
+    <div className="navUser">
+      <h1 className="navUser__logo">Puri Sport</h1>
+      <ul className="navUser__content">
+
+        <li><Link to="login" >Log in</Link></li>
         <li><Link to="register">Register</Link></li>
         <li>
-          
           <Link to="cart">
             <AiOutlineShoppingCart />
           </Link>
-          
-        Cart</li>
+
+          Cart</li>
       </ul>
-     </div>
+    </div>
   )
 }
 
