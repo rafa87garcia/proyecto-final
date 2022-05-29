@@ -13,7 +13,7 @@ const get = () => api.get(`/${endpoint}`);
 
 const add = (data) => api.post(`/${endpoint}`, data);
 
-const edit = (id) => api.put(id);
+const edit = (data) => api.put(`/${endpoint}/${data.id}`, data);
 
 const remove = (id) => api.delete(id);
 
