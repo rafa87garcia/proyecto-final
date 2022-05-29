@@ -12,6 +12,9 @@ import Layout from './shared/components/Layout/Layout';
 import Admin from './pages/Admin/Admin';
 import Contact from './pages/Contact/Contact';
 import Orders from './shared/Orders/Orders';
+import AboutUs from './shared/components/AboutUs/AboutUs';
+import ProductEdit from './pages/product/component/ProductEdit/ProductEdit';
+import ProductCreate from './pages/product/component/ProductCreate/ProductCreate';
 
 function App() {
   return (
@@ -25,9 +28,14 @@ function App() {
         <Route path='contact' element={<Contact />} />
         <Route path='register' element={<Register />} />
         <Route path='/' element={<ProductList />} />
+        <Route path='admin/produclist' element={<ProductList />} />
+        <Route path='admin/orderlist' element={<ProductList />} />
         <Route path='productdetail/:id' element={<ProductDetail />} />
+        <Route path='productcreate' element={<ProductCreate />} />
+        <Route path='productedit/:id' element={<ProductEdit />} />
         <Route path='users' element={<Users />} />
         <Route path='orders' element={<Orders />} />
+        <Route path='aboutus' element={<AboutUs />} />
       </Routes>
       <Footer />
     </Layout>
