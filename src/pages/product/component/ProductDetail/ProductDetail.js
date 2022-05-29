@@ -21,7 +21,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="mt-5" style={{ height: '100vh' }}>
+    <Container className="mt-5" style={{'min-height': '100vh'}}>
       <Link to="/">Go back</Link>
       <Row>
         <Col>
@@ -34,7 +34,8 @@ const ProductDetail = () => {
           <hr />
           <Card.Text>{description}</Card.Text>
           <hr />
-          <Stack>
+          <Stack >
+            
             <div>Quantity:</div>
             <Form.Select size="sm" onChange={handlerChange}>
               <option value="1">1</option>
@@ -42,8 +43,8 @@ const ProductDetail = () => {
               <option value="3">3</option>
               <option value="4">4</option>
             </Form.Select>
-            <div className="vr" />
-            <Button onClick={handlerAdd} variant='outline-primary'>
+            {/* <div className="vr" /> */}
+            <Button onClick={handlerAdd} variant='outline-primary' style={{'margin-top': '20px'}}>
               Add
             </Button>
           </Stack>

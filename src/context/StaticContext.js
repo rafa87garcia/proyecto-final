@@ -5,6 +5,8 @@ const Context = createContext({});
 export const StaticContext = ({ children }) => {
 
   const [productContext, setProductContext] = useState([]);
+  const [cartContext, setCartContext] = useState([]);
+
   const [userContext, setUserContext] = useState();
   const [tokenContext, setTokenContext] = useState();
   return (
@@ -12,6 +14,8 @@ export const StaticContext = ({ children }) => {
       value={{
         productContext,
         setProductContext,
+        cartContext, 
+        setCartContext,
         userContext,
         setUserContext,
         tokenContext,

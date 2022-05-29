@@ -1,12 +1,18 @@
-import React from 'react'
 import { Card, Stack } from 'react-bootstrap'
 import { FaCartArrowDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useShoppingCart from '../../../hooks/useShoppingCart';
 import './_product.scss'
 
 const Product = ({ _id, name, image, price }) => {
 
-  const handlerAdd = () => {
+    const { addItem } = useShoppingCart();
+
+    const handleAdd = () => {
+
+        const quantity = 1;
+        
+        addItem({_id, quantity});
 
   }
 
@@ -27,7 +33,7 @@ const Product = ({ _id, name, image, price }) => {
           <Card.Text style={{ margin: '0' }}>
             {price}€
           </Card.Text>
-          <FaCartArrowDown className='ms-auto' style={{ fontSize: "30px" }} onClick={handlerAdd} />
+          <FaCartArrowDown className='ms-auto' style={{ fontSize: "30px" }} onClick={handleAdd} />
         </Stack>
       </Card.Footer>
     </Card>
