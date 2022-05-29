@@ -25,25 +25,31 @@ function useProducts() {
     }
   }, [productContext, setProductContext]);
 
-  // const getProductById = (id) => {
-
-  //   debugger
-  //   console.log(id);
-  //  const productReturn= products.find((product) => product._id === id);
-
-  //  console.log(productReturn);
-
-  //  return productReturn;
-
-  // };
 
   const getProductById = (id) => products.find(({ _id }) => _id === id);
 
+  const createProduct = (data) => {
+    productAPI.add(data);
+    setProductContext([...products, data]);
+  }
+
+  const editProduct = (data) => {
+    const ProductEditado = productAPI.edit(data);
+    const product = products.filter(({ _id }) => _id !== data.id)
+    setProductContext([...product, ProductEditado]);
+  }
+  
+  const deleteProduct = (data) => {
+
+  }
 
   return {
     products,
     productsError,
-    getProductById
+    getProductById,
+    createProduct,
+    editProduct,
+    deleteProduct,
   }
 }
 
