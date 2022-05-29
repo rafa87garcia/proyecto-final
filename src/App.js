@@ -12,6 +12,7 @@ import Layout from './shared/components/Layout/Layout';
 import Admin from './pages/Admin/Admin';
 import Contact from './pages/Contact/Contact';
 import Orders from './shared/Orders/Orders';
+import AboutUs from './shared/components/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='productdetail/:id' element={<ProductDetail />} />
         <Route path='users' element={<Users />} />
         <Route path='orders' element={<Orders />} />
+        <Route path='aboutus' element={<AboutUs />} />
       </Routes>
       <Footer />
     </Layout>
