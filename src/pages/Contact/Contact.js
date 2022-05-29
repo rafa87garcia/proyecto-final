@@ -29,19 +29,19 @@ const Contact = () => {
       >
         {({handleSubmit, handleChange, errors}) => (
           <Form  className="form"noValidate onSubmit={handleSubmit}>
-            <label htmlFor="email">Correo electrónico:</label>
+            <label htmlFor="email">Email:</label>
             <input id="email" name="email" type="email" onChange={handleChange} />
             <ErrorMessage
               name='email'
               component="div"
             />
-            <label htmlFor="email">Asunto:</label>
+            <label htmlFor="email">Subject:</label>
             <input id="subject" name="subject" type="text" onChange={handleChange} />
             <ErrorMessage
               name='subject'
               component="div"
             />
-            <label htmlFor="message">Correo electrónico:</label>
+            <label htmlFor="message">Message:</label>
             <textarea id="message" name="message" type="textarea" row="10" onChange={handleChange}></textarea>
             <ErrorMessage
               name='message'
