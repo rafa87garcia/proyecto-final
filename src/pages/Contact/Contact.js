@@ -17,7 +17,7 @@ const Contact = () => {
 
   return (
 
-    <div classname="container" style={{height:'100vh'}}>
+    <div className="container" style={{height:'100vh'}}>
       <Formik
         onSubmit={send}
         validationSchema={schema}
@@ -28,7 +28,7 @@ const Contact = () => {
         }}
       >
         {({handleSubmit, handleChange, errors}) => (
-          <Form  classname="form"noValidate onSubmit={handleSubmit}>
+          <Form  className="form"noValidate onSubmit={handleSubmit}>
             <label htmlFor="email">Correo electrónico:</label>
             <input id="email" name="email" type="email" onChange={handleChange} />
             <ErrorMessage
