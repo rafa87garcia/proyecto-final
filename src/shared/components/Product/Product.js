@@ -4,7 +4,7 @@ import { FaCartArrowDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './_product.scss'
 
-const Product = ({id,name, image, price}) => {
+const Product = ({_id,name, image, price}) => {
 
     const handlerAdd = () => {
 
@@ -12,8 +12,8 @@ const Product = ({id,name, image, price}) => {
 
   return (
     <Card>
-        <Link to={`productdetail/${id}`}>
-            <Card.Img variant="top" src={image} />
+        <Link to={`productdetail/${_id}`}>
+            <Card.Img variant="top" src={image} className='card--image'/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
             </Card.Body>

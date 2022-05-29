@@ -1,7 +1,7 @@
-import { ErrorMessage, Formik, Field } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import React from "react";
 import * as yup from "yup";
-import {Row, Form, Col, Button, Container, FloatingLabel} from 'react-bootstrap';
+import {Row, Form, Col, Button, Container} from 'react-bootstrap';
 import './_register.scss'
 
 
