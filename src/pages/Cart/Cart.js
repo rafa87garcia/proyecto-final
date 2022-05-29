@@ -6,15 +6,21 @@ import useProducts from '../../hooks/useProducts';
 
 const Cart = () => {
 
-  const { cart } = useShoppingCart();
+  const { cart, removeItem, addItem } = useShoppingCart();
   const { getProductById } = useProducts();
 
   if (!cart.length) {
     return (<div style={{'minHeight': '100vh'}}>There are no items in the Shopping cart</div>);
   }
 
-  const handleChange = () => {
+  const handleChange = (_id, {target}) => {
+    const { selectedIndex } = target;
+    const { value: quantity } = target[selectedIndex];
+    addItem({ _id, quantity });
+  }
 
+  const handleRemove = (_id) => {
+    removeItem(_id);
   }
 
   return (
@@ -51,7 +57,9 @@ const Cart = () => {
                   
                   <Card.Link
                     href="#"
-                    // onClick={handlerRemove.bind(this, id, name, image, price, cantidad)}
+                    onClick={handleRemove.bind(this, _id)}
+                   
+
                     style={{'margin-top':'20px'}}
                   >
                     Delete
