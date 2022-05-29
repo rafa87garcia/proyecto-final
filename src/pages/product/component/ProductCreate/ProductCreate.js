@@ -4,7 +4,7 @@ import FormProduct from '../../../../shared/components/FormProduct/FormProduct';
 const ProductCreate = () => {
 
   return (
-    <FormProduct/>
+    <FormProduct  />
   );
 }
 
