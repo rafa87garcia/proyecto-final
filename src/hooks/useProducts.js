@@ -3,7 +3,7 @@ import Context from '../context/StaticContext';
 import { productAPI } from '../shared/services';
 
 function useProducts() {
-  
+
   const [products, setProducts] = useState([]);
   const [productsError, setProductsError] = useState(null);
   const { productContext, setProductContext } = useContext(Context);
@@ -17,6 +17,7 @@ function useProducts() {
       }
     };
     if (!productContext.length) {
+
       getData();
     }
     else {
@@ -24,9 +25,25 @@ function useProducts() {
     }
   }, [productContext, setProductContext]);
 
+  // const getProductById = (id) => {
+
+  //   debugger
+  //   console.log(id);
+  //  const productReturn= products.find((product) => product._id === id);
+
+  //  console.log(productReturn);
+
+  //  return productReturn;
+
+  // };
+
+  const getProductById = (id) => products.find(({ _id }) => _id === id);
+
+
   return {
     products,
-    productsError
+    productsError,
+    getProductById
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { ErrorMessage, Form, Formik } from 'formik'
 import { emailAPI } from '../../shared/services';
+import './_contact.scss'
 
 
 import * as yup from 'yup';
@@ -16,7 +17,7 @@ const Contact = () => {
 
   return (
 
-    <div style={{height:'100vh'}}>
+    <div classname="container" style={{height:'100vh'}}>
       <Formik
         onSubmit={send}
         validationSchema={schema}
@@ -27,7 +28,7 @@ const Contact = () => {
         }}
       >
         {({handleSubmit, handleChange, errors}) => (
-          <Form noValidate onSubmit={handleSubmit}>
+          <Form  classname="form"noValidate onSubmit={handleSubmit}>
             <label htmlFor="email">Correo electrónico:</label>
             <input id="email" name="email" type="email" onChange={handleChange} />
             <ErrorMessage
