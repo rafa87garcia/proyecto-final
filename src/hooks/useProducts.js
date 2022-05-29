@@ -47,4 +47,4 @@ function useProducts() {
   }
 }
 
-export default useProducts
+export default useProducts;

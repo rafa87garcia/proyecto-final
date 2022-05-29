@@ -5,6 +5,7 @@ const Context = createContext({});
 export const StaticContext = ({ children }) => {
 
   const [productContext, setProductContext] = useState([]);
+  const [orderContext, setOrderContext] = useState([]);
   const [userContext, setUserContext] = useState();
   const [tokenContext, setTokenContext] = useState();
   return (
@@ -12,10 +13,12 @@ export const StaticContext = ({ children }) => {
       value={{
         productContext,
         setProductContext,
+        orderContext,
+        setOrderContext,
         userContext,
         setUserContext,
         tokenContext,
-        setTokenContext
+        setTokenContext      
       }}
     >
       {children}
