@@ -8,7 +8,9 @@ import './_login.scss'
 import useUser from '../../../hooks/useUser';
 
 const Login = () => {
+  
   const { userLogin, userCurrent } = useUser();
+  
   const save = async (data) => {
     userLogin(data);
   };
@@ -46,32 +48,18 @@ const Login = () => {
 
                   </Row>
                   <Row className="mb-3">
-
-
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Col>
                         <Form.Label>Email</Form.Label>
-
                       </Col>
                       <Col >
                         <Form.Control name="email"
                           type='email'
                           onChange={handleChange}
-
                         />
                       </Col>
-
-
-                      {/* <Field
-                          name="email"
-                          id="email"
-                          type="email"
-                          onChange={handleChange}
-                        /> */}
                       <ErrorMessage name="email" component="div" />
-
                     </Form.Group>
-
                   </Row>
 
                   <Row className="mb-3">
@@ -95,13 +83,6 @@ const Login = () => {
                     </Form.Group>
 
                   </Row>
-                  {/* <Field 
-                      name="password"
-                      id="password"
-                      type="password"
-                      onChange={handleChange}
-                    />Password
-                    <ErrorMessage name="password" component="div" /> */}
 
                   <Row className='form__button '>
                     <Col className='form__button--padding'>

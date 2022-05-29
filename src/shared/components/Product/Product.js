@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./_product.scss";
 
 const Product = ({ _id, name, image, price }) => {
+
   const handlerAdd = () => { };
 
   return (
@@ -18,6 +19,7 @@ const Product = ({ _id, name, image, price }) => {
       <Link to={`productedit/${_id}`} basename="/">
         Edit
       </Link>
+      
       <Card.Footer>
         <Stack direction="horizontal">
           <Card.Text style={{ margin: "0" }}>{price}€</Card.Text>

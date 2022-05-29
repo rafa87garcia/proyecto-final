@@ -10,10 +10,12 @@ const useUser = () => {
   const { tokenContext, setTokenContext } = useContext(Context);
 
   useEffect(() => {
+    
+    setUserContext(userContext);
+    
+    userLogin();
 
-    (!userContext || !tokenContext) && userLogin();
-    userContext && setUserCurrent(userContext);
-    tokenContext && setToken(userContext);
+
 
   }, [userContext, setUserContext, tokenContext, setTokenContext]);
 
@@ -21,12 +23,17 @@ const useUser = () => {
     if (!data) {
       return;
     }
+
     try {
       const { data: { user, token } } = await login(data);
 
-      const tokenStogare = localStorage.setItem("token", token);
-      setTokenContext(tokenStogare);
+      localStorage.setItem("token", token);
+      setTokenContext(token);
       setUserContext(user);
+      
+      (!userContext || !tokenContext) && userLogin();
+      userContext && setUserCurrent(userContext);
+      tokenContext && setToken(userContext);
 
     } catch (error) { }
   }
