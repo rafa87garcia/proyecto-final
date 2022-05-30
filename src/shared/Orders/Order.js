@@ -10,10 +10,9 @@ const Order = (data) => {
         <ul className='list'>
           <div className='&__titleLi'>data._id
             <ul className='orderDetail'>
-              <li className="&__name">{data.name}</li>
-              <li className="&__description">{data.description}</li>
-              <li className="&__pvp">{data.pvp} </li>
-              <li className="&__total">{data.total} </li>
+              <li >{data.nº}</li>
+              <li >{data.product} </li>
+              <li >{data.user} </li>
             </ul>
           </div>
       </ul>
