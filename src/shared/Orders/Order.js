@@ -2,29 +2,26 @@
 import React from 'react'
 import './_Orders.scss';
 
-if (document.getElementById('Orders')) {
- 
-}
-const Orders = () => {
+
+const Order = (data) => {
   
   return (
     <div className="Order">
-      <h1 className='title'>My Orders</h1>
         <ul className='list'>
-          <li className='&__titleLi'>Order:
+          <div className='&__titleLi'>data._id
             <ul className='orderDetail'>
-              <li className="&__name">name:</li>
-              <li className="&__description">description:</li>
-              <li className="&__pvp">pvp: </li>
-              <li className="&__total">total: </li>
+              <li className="&__name">{data.name}</li>
+              <li className="&__description">{data.description}</li>
+              <li className="&__pvp">{data.pvp} </li>
+              <li className="&__total">{data.total} </li>
             </ul>
-          </li>
+          </div>
       </ul>
     </div>
   )
 }
 
-export default Orders
+export default Order
 
 //   <div >
 //     {products.map((product) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import useProducts from '../../../../hooks/useProducts';
 import { Col, Container, Row } from 'react-bootstrap';
 import Product from '../../../../shared/components/Product/Product';

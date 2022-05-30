@@ -1,17 +1,23 @@
-import React from "react";
-import { Card, Stack } from "react-bootstrap";
-import { FaCartArrowDown } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import "./_product.scss";
+import { Card, Stack } from 'react-bootstrap'
+import { FaCartArrowDown } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import useShoppingCart from '../../../hooks/useShoppingCart';
+import './_product.scss'
 
 const Product = ({ _id, name, image, price }) => {
-  const handlerAdd = () => { };
+
+  const { addItem } = useShoppingCart();
+
+  const handlerAdd = () => {
+    const quantity = 1;
+    addItem({ _id, quantity });
+  }
 
   return (
     <Card>
       <Link to={`productdetail/${_id}`}>
-        <Card.Img variant="top" src={image} className="card--image" />
-        <Card.Body>
+        <Card.Img variant="top" src={image} className='card--image' />
+        <Card.Body style={{ height: '88px' }}>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
       </Link>

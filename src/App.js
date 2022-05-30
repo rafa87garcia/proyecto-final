@@ -11,12 +11,13 @@ import Users from './pages/Users/Users';
 import Layout from './shared/components/Layout/Layout';
 import Admin from './pages/Admin/Admin';
 import Contact from './pages/Contact/Contact';
-import Orders from './shared/Orders/Orders';
+import OrderList from './shared/Orders/OrderList';
 import AboutUs from './shared/components/AboutUs/AboutUs';
 import ProductEdit from './pages/product/component/ProductEdit/ProductEdit';
 import ProductCreate from './pages/product/component/ProductCreate/ProductCreate';
 
 function App() {
+  
   return (
 
     <Layout>
@@ -30,11 +31,11 @@ function App() {
         <Route path='/' element={<ProductList />} />
         <Route path='admin/produclist' element={<ProductList />} />
         <Route path='admin/orderlist' element={<ProductList />} />
-        <Route path='productdetail/:id' element={<ProductDetail />} />
+        <Route path='productdetail/:_id' element={<ProductDetail />} />
         <Route path='productcreate' element={<ProductCreate />} />
         <Route path='productedit/:id' element={<ProductEdit />} />
         <Route path='users' element={<Users />} />
-        <Route path='orders' element={<Orders />} />
+        <Route path='orderList' element={<OrderList />} />
         <Route path='aboutus' element={<AboutUs />} />
       </Routes>
       <Footer />

@@ -51,7 +51,7 @@ const Register = () => {
               }}
             >
               {({ handleSubmit, handleChange, errors }) => (
-                <Form noValidate onSubmit={handleSubmit} className='form'>
+                <Form noValidate onSubmit={handleSubmit} className='registerForm'>
                 <Row className='justify-content-md-center'>
                   <h1>Sign Up</h1>
 
