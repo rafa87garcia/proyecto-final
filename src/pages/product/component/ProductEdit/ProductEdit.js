@@ -8,12 +8,13 @@ const ProductEdit = () => {
 
   const { getProductById } = useProducts();
   const { id } = useParams();
-  const product = getProductById(id);
 
+  const product = getProductById(id);
   if (!product) return "";
 
+
   return (
-    <FormProduct product={product} />
+    <FormProduct {...product} />
   );
 }
 

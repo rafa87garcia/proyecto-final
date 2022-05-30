@@ -25,25 +25,32 @@ function useProducts() {
     }
   }, [productContext, setProductContext]);
 
-  // const getProductById = (id) => {
-
-  //   debugger
-  //   console.log(id);
-  //  const productReturn= products.find((product) => product._id === id);
-
-  //  console.log(productReturn);
-
-  //  return productReturn;
-
-  // };
 
   const getProductById = (id) => products.find(({ _id }) => _id === id);
 
+  const createProduct = (data) => {
+    productAPI.add(data);
+    setProductContext([...products, data]);
+  }
+
+  const editProduct = async (data) => {
+    const { data: ProductEdited } = await productAPI.edit(data);
+    const product = products.filter(({ _id }) => _id !== data.id)
+    setProductContext([...product, ProductEdited]);
+    return product;
+  }
+
+  const deleteProduct = (data) => {
+
+  }
 
   return {
     products,
     productsError,
-    getProductById
+    getProductById,
+    createProduct,
+    editProduct,
+    deleteProduct,
   }
 }
 
