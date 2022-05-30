@@ -41,6 +41,19 @@ const Cart = () => {
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>{price}€</Card.Text>
                 <Stack>
+                  <div>Size:</div>
+                  <Form.Select
+                    size="sm"
+                    defaultValue={quantity}
+                    onChange={handleChange.bind(this, _id)}
+                  >
+                    <option value="1">39</option>
+                    <option value="2">40</option>
+                    <option value="3">41</option>
+                    <option value="4">42</option>
+                    <option value="4">43</option>
+                    <option value="4">44</option>
+                  </Form.Select>
                   <div>Quantity:</div>
                   <Form.Select
                     size="sm"
