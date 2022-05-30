@@ -14,7 +14,7 @@ const FormProduct = (product) => {
       {(handleSubmit, handleChange, errors) => (
         <Form noValidate onSubmit={handleSubmit} >
           <Row className='justify-content-md-center mt-5'>
-            {!!product.id ? (<h1>Edit product {product.name} </h1>) : (<h1>Create product </h1>)} 
+            {!!product.id ? (<h1>Edit product {product.name} </h1>) : (<h1>Create product</h1>)} 
           </Row>
           <Row className="">
             <Form.Group as={Col} controlId="formGridEmail">
@@ -88,7 +88,7 @@ const FormProduct = (product) => {
           </Row>
           <Row className='form__button '>
             <Col className='form__button--padding'>
-              <Button type='submit' variant='outline-primary'> {!!product.id ? (<>Edit</>) : (<>Create</>)}</Button>
+              <Button type='submit' variant="warning"> {!!product.id ? (<>Edit</>) : (<>Create</>)}</Button>
             </Col>
 
           </Row>
