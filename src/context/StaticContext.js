@@ -6,6 +6,8 @@ export const StaticContext = ({ children }) => {
 
   const [productContext, setProductContext] = useState([]);
   const [orderContext, setOrderContext] = useState([]);
+  const [cartContext, setCartContext] = useState([]);
+
   const [userContext, setUserContext] = useState();
   const [tokenContext, setTokenContext] = useState();
   return (
@@ -15,6 +17,8 @@ export const StaticContext = ({ children }) => {
         setProductContext,
         orderContext,
         setOrderContext,
+        cartContext, 
+        setCartContext,
         userContext,
         setUserContext,
         tokenContext,
