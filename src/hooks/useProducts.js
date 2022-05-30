@@ -37,6 +37,7 @@ function useProducts() {
     const { data: ProductEdited } = await productAPI.edit(data);
     const product = products.filter(({ _id }) => _id !== data.id)
     setProductContext([...product, ProductEdited]);
+    return product;
   }
 
   const deleteProduct = (data) => {

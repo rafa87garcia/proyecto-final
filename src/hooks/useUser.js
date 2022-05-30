@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import Context from '../context/StaticContext';
-import { login } from '../shared/services/user';
+import { add, login } from '../shared/services/user';
 
 const useUser = () => {
 
@@ -18,9 +18,7 @@ const useUser = () => {
   }, [userContext, setUserContext, tokenContext, setTokenContext]);
 
   const userLogin = async (data) => {
-    if (!data) {
-      return;
-    }
+    if (!data) { return; }
     try {
       const { data: { user, token } } = await login(data);
 
@@ -31,10 +29,19 @@ const useUser = () => {
     } catch (error) { }
   }
 
+  const userRegister = async (data) => {
+    if (!data) { return; }
+    try {
+     await add(data);
+
+    } catch (error) { }
+  }
+
   return {
     userCurrent,
     token,
     userLogin,
+    userRegister,
   }
 }
 

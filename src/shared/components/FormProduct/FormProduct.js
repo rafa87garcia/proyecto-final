@@ -3,13 +3,16 @@ import { ErrorMessage, Formik } from 'formik';
 import * as yup from "yup";
 import { Col, Row, Form, Button, Container } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts';
+import { useNavigate } from "react-router-dom";
 
 const FormProduct = (product) => {
   const { createProduct, editProduct } = useProducts();
+  
+  let navigate = useNavigate();
   const save = (data) => {
-
     if (!!data.id) {
       editProduct(data);
+      navigate(`/productDetail/${data.id}`, { replace: true });
     } else {
       createProduct(data);
     }

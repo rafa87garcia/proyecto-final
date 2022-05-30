@@ -26,7 +26,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="mt-5" style={{'min-height': '100vh'}}>
+    <Container className="mt-5" style={{'minHeight': '100vh'}}>
       <Link to="/">Go back</Link>
       <Row>
         <Col>
@@ -51,7 +51,7 @@ const ProductDetail = () => {
               <option value="4">4</option>
             </Form.Select>
             
-            <Button onClick={handleAdd} variant='outline-primary' style={{'margin-top': '20px'}}>
+            <Button onClick={handleAdd} variant='outline-primary' style={{'marginTop': '20px'}}>
               Add
             </Button>
           </Stack>
