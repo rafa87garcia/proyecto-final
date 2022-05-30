@@ -2,12 +2,16 @@ import React from 'react'
 import useShoppingCart from '../../hooks/useShoppingCart'
 import { Button, Card, Col, Container, Form, Row, Stack } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
+import useOrders from '../../hooks/useOrders';
+import useUser from '../../hooks/useUser';
 
 
 const Cart = () => {
 
   const { cart, removeItem, addItem } = useShoppingCart();
   const { getProductById } = useProducts();
+  const { addOrder } = useOrders();
+  const { userCurrent } = useUser();
 
   if (!cart.length) {
     return (<div style={{'minHeight': '100vh'}}>There are no items in the Shopping cart</div>);
@@ -21,6 +25,13 @@ const Cart = () => {
 
   const handleRemove = (_id) => {
     removeItem(_id);
+  }
+
+  const handleClick = () => {
+
+    // if(!userCurrent) console.log('no user');
+    // return <div>Please, log in or register before buying</div>
+    addOrder({products: cart, user: 'rafa'});
   }
 
   return (
@@ -89,7 +100,7 @@ const Cart = () => {
     </Row>
     <Row>
       <Col>
-        <Button variant='outline-primary'>Buy</Button>
+        <Button variant='outline-primary' onClick={handleClick}>Buy</Button>
 
       </Col>
     </Row>

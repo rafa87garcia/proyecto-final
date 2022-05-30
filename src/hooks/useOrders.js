@@ -7,6 +7,7 @@ function useOrders() {
   const [orders, setOrders] = useState([]);
   const [productsError, setProductsError] = useState(null);
   const { orderContext, setOrderContext } = useContext(Context);
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -25,11 +26,15 @@ function useOrders() {
     }
   }, [orderContext, setOrderContext]);
 
-
+  const addOrder = (data) => {
+    orderAPI.add(data)
+      .then((res) => setOrderContext([...orderContext, res.data]));
+  }
 
   return {
     orders,
     productsError,
+    addOrder
     
   }
 }
