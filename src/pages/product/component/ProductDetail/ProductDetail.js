@@ -13,7 +13,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return "";
-  const { description, image, price, name } = product;
+  const { description, image, price, name, category } = product;
 
   const handleAdd = () => {
     addItem({_id, quantity});
@@ -39,6 +39,8 @@ const ProductDetail = () => {
           <hr />
           <Card.Text>{description}</Card.Text>
           <hr />
+          <Card.Text>{category}</Card.Text>
+          <hr/>
           <Stack >
             
             <div>Quantity:</div>

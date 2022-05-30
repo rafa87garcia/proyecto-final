@@ -1,5 +1,6 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
+import * as yup from "yup";
 import { Col, Row, Form, Button, Container } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts';
 
@@ -14,6 +15,14 @@ const FormProduct = (product) => {
     }
   }
 
+  const schema = yup.object().shape({
+    name: yup.string().required(),
+    description: yup.string().required(),
+    image: yup.string().required(),
+    price: yup.number().required(),
+    category: yup.string().required()
+  });
+
   return (
     <Container style={{ height: '100vh' }}>
       <Formik
@@ -26,6 +35,7 @@ const FormProduct = (product) => {
           category: product.category
         }}
         onSubmit={save}
+        validationSchema={schema}
       >
         {({ handleSubmit, handleChange, errors }) => (
           <Form noValidate onSubmit={handleSubmit}>
@@ -94,18 +104,15 @@ const FormProduct = (product) => {
             </Row>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridCategory">
-                <Col>
-                  <Form.Label>category</Form.Label>
-                </Col>
-                <Col >
-                  <Form.Control name="category"
-                    type='text'
-                    defaultValue={product.category}
-                    onChange={handleChange}
-                  />
-                </Col>
-                <ErrorMessage name="category" component="div" />
+                <Form.Label>Category</Form.Label>
+                <Form.Select defaultValue={product.category} name="category" onChange={handleChange}>
+                  <option>Choose...</option>
+                  <option value="Man">Man</option>
+                  <option value="Woman">Woman</option>
+                  <option value="Child">Child</option>
+                </Form.Select>
               </Form.Group>
+              <ErrorMessage name="category" component="div" />
             </Row>
             <Row className='form__button '>
               <Col className='form__button--padding'>
