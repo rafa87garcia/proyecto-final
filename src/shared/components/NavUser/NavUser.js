@@ -4,12 +4,12 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import useShoppingCart from "../../../hooks/useShoppingCart";
 import './_navUser.scss';
 
-import useUser from "../../../hooks/useUser";
+
 
 const NavUser = () => {
 
   const { cart } = useShoppingCart();
-  const { userCurrent } = useUser();
+  
 
   return (
     <div className="navUser">
