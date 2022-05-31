@@ -7,6 +7,8 @@ import useUser from "../../../hooks/useUser";
 import './_register.scss'
 
 
+
+
 const schema = yup.object().shape({
   email: yup.string().required().email("dasdasda"),
   name: yup.string().required(),
@@ -29,10 +31,12 @@ const Register = () => {
   };
   return (
     <>
-      <Container style={{ height: '100vh' }}>
+
+    <Container>
 
         <Row className='justify-content-md-center'>
           <Col >
+
 
             <Formik
               onSubmit={save}
