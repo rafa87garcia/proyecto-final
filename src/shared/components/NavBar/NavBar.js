@@ -22,7 +22,6 @@ const NavBar = () => {
         <li><Link to="/">All Products</Link></li>
         <li><Link to="aboutus">About us</Link></li>
         {userCurrent && (<li><Link to="admin">Admin</Link></li>)}
-        <li><Link to="admin">Admin</Link></li>
         <li><Link to="orderList">My orders</Link></li>
         <li><Link to="contact">Contact</Link></li>
       </ul>
