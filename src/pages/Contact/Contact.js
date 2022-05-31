@@ -1,21 +1,31 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Formik } from 'formik'
-import { emailAPI } from '../../shared/services'
+import { Form, Button, Container } from 'react-bootstrap'
+import UseEmails from '../../hooks/UseEmails';
 import './_contact.scss'
-import { Row, Form, Col, Button, Container } from 'react-bootstrap'
-
 import * as yup from 'yup'
+
+
 const schema = yup.object().shape({
   email: yup.string().required().email(),
   subject: yup.string().required().min(5),
   message: yup.string().required(),
 })
 
-const { send } = emailAPI
 
 const Contact = () => {
+  let navigate = useNavigate();
+
+  const { sendEmail } = UseEmails();
+
+  const send = (data) => {
+    sendEmail(data);
+    navigate("/", { replace: true });
+  }
+
   return (
-    <Container  style={{ height: '100vh' }}>
+    <Container style={{ height: '100vh' }}>
 
       <Formik
         onSubmit={send}
@@ -29,10 +39,10 @@ const Contact = () => {
 
         {({ handleSubmit, handleChange, errors }) => (
           <Form noValidate onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <h1>Contact</h1>
+            <Form.Group className="mb-3" controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
-                id="email"
                 name="email"
                 type="email"
                 placeholder="name@example.com"
@@ -42,11 +52,10 @@ const Contact = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
+              controlId="subject"
             >
               <Form.Label>Subject</Form.Label>
               <Form.Control
-                id="subject"
                 name="subject"
                 size="lg"
                 type="text"
@@ -57,11 +66,10 @@ const Contact = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
+              controlId="message"
             >
               <Form.Label>Message</Form.Label>
               <Form.Control
-                id="message"
                 name="message"
                 as="textarea"
                 rows={3}

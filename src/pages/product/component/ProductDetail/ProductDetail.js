@@ -13,7 +13,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return "";
-  const { description, image, price, name } = product;
+  const { description, image, price, name, category } = product;
 
   const handleAdd = () => {
     addItem({_id, quantity});
@@ -26,7 +26,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="mt-5" style={{'min-height': '100vh'}}>
+    <Container className="mt-5" style={{'minHeight': '100vh'}}>
       <Link to="/">Go back</Link>
       <Row>
         <Col>
@@ -39,6 +39,8 @@ const ProductDetail = () => {
           <hr />
           <Card.Text>{description}</Card.Text>
           <hr />
+          <Card.Text>{category}</Card.Text>
+          <hr/>
           <Stack >
             
             <div>Quantity:</div>
@@ -49,7 +51,7 @@ const ProductDetail = () => {
               <option value="4">4</option>
             </Form.Select>
             
-            <Button onClick={handleAdd} variant='outline-primary' style={{'margin-top': '20px'}}>
+            <Button onClick={handleAdd} variant='outline-primary' style={{'marginTop': '20px'}}>
               Add
             </Button>
           </Stack>

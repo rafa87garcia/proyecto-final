@@ -35,7 +35,7 @@ const Cart = () => {
   }
 
   return (
-    <Container className="mt-5" style={{'min-height': '100vh'}}>
+    <Container className="mt-5" style={{'minHeight': '100vh'}}>
     <Row style={{ rowGap: "2rem" }}>
     {cart.map(({_id, quantity}) => {
       const {image, price, name } = getProductById(_id);
@@ -84,7 +84,7 @@ const Cart = () => {
                     onClick={handleRemove.bind(this, _id)}
                    
 
-                    style={{'margin-top':'20px'}}
+                    style={{'marginTop':'20px'}}
                   >
                     Delete
                   </Card.Link>
