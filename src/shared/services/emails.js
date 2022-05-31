@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "../../data/config";
 
 const endpoint = "emails";
-const baseURL = `http://${config.baseUrl}:${config.port}`;
+const baseURL = `http://${config.baseUrl}`;
 const api = axios.create({
   baseURL,
 });
