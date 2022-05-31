@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "../../data/config";
 
 const endpoint = "orders";
-const baseURL = `${config.baseUrl}:${config.port}`;
+const baseURL = `${config.baseUrl}`;
 const token = localStorage.getItem("token");
 const api = axios.create({
   baseURL,

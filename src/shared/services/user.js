@@ -3,7 +3,7 @@ import config from "../../data/config";
 
 
 const endpoint = "users";
-const baseURL = `${config.baseUrl}:${config.port}`;
+const baseURL = `${config.baseUrl}`;
 const api = axios.create({
   baseURL,
 
